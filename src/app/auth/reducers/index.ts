@@ -10,16 +10,21 @@ import {
 } from '@ngrx/store';
 import { User } from '../model/user.model';
 import { AuthActions } from '../action-type';
+import { routerReducer } from '@ngrx/router-store';
+import { environment } from '../../../environments/environment';
 
 export const authFeatureKey = 'auth';
 
 export interface AuthState {
   user : User
 }
+
+
+
 export const initialAuthState : AuthState = {
   user: undefined
 }
-// export const reducers: ActionReducerMap<AuthState> = {}
+
 
 export const  authReducer = createReducer(
   initialAuthState,
